@@ -36,6 +36,10 @@ LOCAL_SHARED_LIBRARIES        := libhistogram libbinder libhardware libutils lib
                                  libdisplayconfig.qti \
                                  libdrm libthermalclient
 
+ifeq ($(TARGET_SUPPORTS_DOLBY_VISION), true)
+LOCAL_CFLAGS                  += -DTARGET_SUPPORTS_DOLBY_VISION
+endif
+
 ifeq ($(TARGET_USES_FOD_ZPOS), true)
 LOCAL_CFLAGS                  += -DFOD_ZPOS
 endif
